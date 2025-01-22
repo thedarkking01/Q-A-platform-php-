@@ -7,8 +7,20 @@
     <?php include('./client/commonFiles.php') ?>
 </head>
 <body>
-    <?php include('./client/header.php')?>
-    <?php include('./client/login.php')?>
+    <?php
+    session_start();
+    include('./client/header.php');
+    if (isset($_GET['signup']) && !$_SESSION['user']['username']) {
+        include('./client/signup.php');
+
+    } 
+    else if (isset($_GET['login']) && !$_SESSION['user']['username']) {
+        include('./client/login.php');
+    } 
+    else {
+        //
+     }
+     ?>
     <?php include('./client/signup.php')?>
 </body>
 </html>

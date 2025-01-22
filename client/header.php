@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="./">
@@ -10,25 +9,29 @@
         <li class="nav-item">
           <a class="nav-link active" href="./">Home</a>
         </li>
-        
-        <!-- When logged in, show these links -->
-        <li class="nav-item">
-          <a class="nav-link" href="./server/requests.php?logout=true">Logout (Username)</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="?ask=true">Ask A Question</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="?u-id=123">My Questions</a>
-        </li>
+        <?php
+        if ($_SESSION['user']['username']) { ?>
+          <li class="nav-item">
+            <a class="nav-link"
+              href="./server/requests.php?logout=true">Logout(<?php echo ucfirst($_SESSION['user']['username']) ?>)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?ask=true">Ask A Question</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?u-id=<?php echo $_SESSION['user']['user_id'] ?>">My Questions</a>
+          </li>
+        <?php } ?>
 
-        <!-- When logged out, show these links -->
-        <li class="nav-item">
-          <a class="nav-link" href="?login=true">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="?signup=true">SignUp</a>
-        </li>
+        <?php
+        if (!$_SESSION['user']['username']) { ?>
+          <li class="nav-item">
+            <a class="nav-link" href="?login=true">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?signup=true">SignUp</a>
+          </li>
+        <?php } ?>
 
         <li class="nav-item">
           <a class="nav-link" href="?latest=true">Latest Questions</a>
