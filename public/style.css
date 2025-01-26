@@ -7,3 +7,17 @@ a{
 .margin-bottom-15{
     margin-bottom: 15px;
 }
+.question-list {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+}
+.question-list h4{
+    margin: 0;
+    padding: 0;
+}
+.question-list a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #1c7194 !important;
+}
