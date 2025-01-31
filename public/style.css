@@ -21,3 +21,8 @@ a{
     text-decoration: none;
     color: #1c7194 !important;
 }
+.answer-wrapper{
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 5px;
+}
