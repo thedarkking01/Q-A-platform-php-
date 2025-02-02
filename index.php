@@ -24,10 +24,13 @@
         $qid=$_GET['q-id'];
         include('./client/question-details.php');
     }
-    else{
-        include('./client/questions.php');
+    else if($_GET['c-id']){
+        $cid=$_GET['c-id'];
+    include('./client/questions.php');
     }
-
+    else{
+    include('./client/questions.php');
+    }
      ?>
     <?php include('./client/signup.php')?>
 </body>

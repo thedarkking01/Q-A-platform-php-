@@ -8,7 +8,7 @@ foreach($result as $row){
     $name=  ucfirst($row['name']);
     $id= $row['id'];
     echo "<div class='row question-list'>
-    <h4><a href='?q-id=$id'>$name</a></h4>
+    <h4><a href='?c-id=$id'>$name</a></h4>
     </div>";
 }
     ?>

@@ -4,7 +4,12 @@
 <h1 class="heading">Questions</h1>
 <?php 
 include("./common/db.php");
-$query="select * from questions";
+
+if(isset($_GET["c-id"])){
+    $query="select * from questions where category_id=$cid";
+}else{
+   $query="select * from questions";
+}
 $result = $conn->query($query);
 foreach($result as $row){
     $title= $row['title'];
