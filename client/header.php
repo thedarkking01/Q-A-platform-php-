@@ -21,6 +21,7 @@
           <li class="nav-item">
             <a class="nav-link" href="?u-id=<?php echo $_SESSION['user']['user_id'] ?>">My Questions</a>
           </li>
+          
         <?php } ?>
 
         <?php
@@ -36,6 +37,7 @@
         <li class="nav-item">
           <a class="nav-link" href="?latest=true">Latest Questions</a>
         </li>
+
       </ul>
     </div>
     <form class="d-flex" action="">
